@@ -5,7 +5,12 @@ public class PlayerMobility : MonoBehaviour {
 
 	public float speed;
 	public string horzAxe, vertAxe;
+	public GameObject healthbar;
 	bool facingRight = true;
+
+	void Start(){
+
+	}
 
 	//(FixedUpdate doesn't require time.deltaTimeWhatever)
 	void FixedUpdate(){
