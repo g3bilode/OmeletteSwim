@@ -5,11 +5,15 @@ public class PlayerMobility : MonoBehaviour {
 
 	public float speed;
 	public string horzAxe, vertAxe;
-	public GameObject healthbar;
+	public GameObject healthBarPrefab;
+	GameObject healthBar;
 	bool facingRight = true;
 
 	void Start(){
-
+		Vector3 healthPos = new Vector3(transform.position.x+1, transform.position.y+1, 0);
+		healthBar = Instantiate(healthBarPrefab,
+		            healthPos,
+		            Quaternion.identity) as GameObject;
 	}
 
 	//(FixedUpdate doesn't require time.deltaTimeWhatever)
@@ -30,6 +34,14 @@ public class PlayerMobility : MonoBehaviour {
 				flipSprite();
 			}
 		}
+
+	}
+	
+	void Update(){
+		healthBar.transform.position = 
+			new Vector3 (Mathf.Lerp (healthBar.transform.position.x, transform.position.x+1, 0.2f),
+		                 Mathf.Lerp (healthBar.transform.position.y, transform.position.y+1, 0.2f),
+		                 0);
 	}
 
 	//Flip the sprite
@@ -38,6 +50,12 @@ public class PlayerMobility : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.y *= -1;
 		transform.localScale = theScale;
+	}
+
+	public void damage(){
+//		if (healthBar != null) {
+//			Destroy (healthBar);
+//		}
 	}
 
 }
