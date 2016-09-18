@@ -11,7 +11,8 @@ public class GameController : MonoBehaviour {
 	public bool finished = false;
 
 	void Start(){
-	
+		transform.FindChild("Music").GetComponent<AudioSource>().time = 57.0f;
+		transform.FindChild("Music").GetComponent<AudioSource>().Play();
 	}
 
 	public void victory(Player winner){
@@ -23,6 +24,9 @@ public class GameController : MonoBehaviour {
 		finished = true;
 		victoryText.gameObject.SetActive (true);
 		restartButton.SetActive (true);
+
+		transform.FindChild("Music").GetComponent<AudioSource>().Stop();
+		transform.FindChild("VictorySound").GetComponent<AudioSource>().Play();
 	}
 
 }
