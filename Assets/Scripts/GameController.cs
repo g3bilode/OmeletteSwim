@@ -1,42 +1,28 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-	GameObject player1;
-	GameObject player2;
-	GameObject background;
-	GameObject first;
-	float leftBound;
-	float rightBound;
+	public Player player1;
+	public Player player2;
+	public Text victoryText;
+	public GameObject restartButton;
+	public bool finished = false;
 
-	// Use this for initialization
-	void Start () {
-		player1 = GameObject.Find("Player1");
-		player2 = GameObject.Find("Player2");
-		background = GameObject.Find("Background");
-
-		float bgHalfWidth = background.GetComponent<SpriteRenderer> ().bounds.extents.x;
-		leftBound = Camera.main.orthographicSize * Camera.main.aspect - bgHalfWidth;
-		rightBound = bgHalfWidth - Camera.main.orthographicSize * Camera.main.aspect;
-		Camera.main.transform.position = new Vector3 (leftBound,
-                                              Camera.main.transform.position.y,
-                                              Camera.main.transform.position.z);
-	}
+	void Start(){
 	
-	// Update is called once per frame
-	void Update () {
-		if (player1.transform.position.x > player2.transform.position.x) {
-			first = player1;
-		} else {
-			first = player2;
-		}
-
-		//Camera follow
-		if (first.transform.position.x > leftBound && first.transform.position.x < rightBound) {
-			Camera.main.transform.position = new Vector3 (first.transform.position.x,
-		                                             Camera.main.transform.position.y,
-		                                             Camera.main.transform.position.z);
-		}
 	}
+
+	public void victory(Player winner){
+		if (winner == player1) {
+			victoryText.text = "PLAYER ONE\nSURVIVES";
+		} else {
+			victoryText.text = "PLAYER TWO\nSURVIVES";
+		}
+		finished = true;
+		victoryText.gameObject.SetActive (true);
+		restartButton.SetActive (true);
+	}
+
 }
