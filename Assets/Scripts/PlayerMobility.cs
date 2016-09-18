@@ -3,10 +3,14 @@ using System.Collections;
 
 public class PlayerMobility : MonoBehaviour {
 
-	public float speed;
-	public int health = 3;
+	
 	public string horzAxe, vertAxe;
 	public GameObject healthBarPrefab;
+
+	public float speed;
+	public int health = 3;
+
+
 	GameObject healthBar;
 	Animator anim;
 	bool facingRight = true;
