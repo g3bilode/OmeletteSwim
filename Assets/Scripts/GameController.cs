@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour {
 			first = player2;
 		}
 
+		//Camera follow
 		Camera.main.transform.position = new Vector3 (first.transform.position.x,
 		                                             Camera.main.transform.position.y,
 		                                             Camera.main.transform.position.z);

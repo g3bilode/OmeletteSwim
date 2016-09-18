@@ -4,9 +4,11 @@ using System.Collections;
 public class PlayerMobility : MonoBehaviour {
 
 	public float speed;
+	public int health = 3;
 	public string horzAxe, vertAxe;
 	public GameObject healthBarPrefab;
 	GameObject healthBar;
+	Animator anim;
 	bool facingRight = true;
 
 	void Start(){
@@ -14,6 +16,7 @@ public class PlayerMobility : MonoBehaviour {
 		healthBar = Instantiate(healthBarPrefab,
 		            healthPos,
 		            Quaternion.identity) as GameObject;
+		anim = healthBar.GetComponent<Animator> ();
 	}
 
 	//(FixedUpdate doesn't require time.deltaTimeWhatever)
@@ -53,6 +56,8 @@ public class PlayerMobility : MonoBehaviour {
 	}
 
 	public void damage(){
+		anim.SetInteger ("Health", health - 1);
+		health -= 1;
 //		if (healthBar != null) {
 //			Destroy (healthBar);
 //		}
