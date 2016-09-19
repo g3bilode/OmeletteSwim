@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
 		}
 		finished = true;
 		victoryText.gameObject.SetActive (true);
+		Camera.main.GetComponent<EdgeCollider2D> ().enabled = false;
 		restartButton.SetActive (true);
 
 		transform.FindChild("Music").GetComponent<AudioSource>().Stop();

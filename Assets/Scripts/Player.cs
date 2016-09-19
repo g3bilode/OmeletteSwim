@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
 	Animator anim;
 	bool facingRight = true;
 	float damageTimer = 0.0f;
+	float boostTimer = 0.0f;
 
 
 	void Start(){
@@ -57,6 +58,14 @@ public class Player : MonoBehaviour {
 					speed = minSpeed;
 				}
 			}
+
+			//damaged
+			if (boostTimer > 0.0f){
+				boostTimer -= Time.deltaTime;
+				if (boostTimer <= 0.0f){
+					speed = minSpeed;
+				}
+			}
 		}
 	}
 	
@@ -88,6 +97,15 @@ public class Player : MonoBehaviour {
 				StartCoroutine(blink(damageTimer));
 			}
 		}
+	}
+
+	public void boost(){
+		if (health < 3) {
+			anim.SetInteger ("Health", health + 1);
+			health +=1;
+		}
+		speed = boostSpeed;
+		boostTimer = 2.5f;
 	}
 
 	//Blink sprite
