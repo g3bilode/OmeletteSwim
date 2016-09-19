@@ -85,7 +85,7 @@ public class Player : MonoBehaviour {
 	}
 
 	//Damage player
-	public void damage(){
+	public void damage(bool giveBoost){
 		if (damageTimer <= 0.0f){ //not recently damaged
 			anim.SetInteger ("Health", health - 1);
 			health -= 1;
@@ -93,7 +93,9 @@ public class Player : MonoBehaviour {
 				gameController.victory (opponent);
 			} else {
 				damageTimer = 2.5f;
-				speed = boostSpeed;
+				if (giveBoost){
+					speed = boostSpeed;
+				}
 				StartCoroutine(blink(damageTimer));
 			}
 		}

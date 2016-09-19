@@ -3,17 +3,15 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 
-	GameObject player1;
-	GameObject player2;
+	public Player player1;
+	public Player player2;
 	GameObject background;
-	GameObject first;
+	Player first;
 	float leftBound;
 	float rightBound;
 
 	// Use this for initialization
 	void Start () {
-		player1 = GameObject.Find("Player1");
-		player2 = GameObject.Find("Player2");
 		background = GameObject.Find("Background");
 
 		float bgHalfWidth = background.GetComponent<SpriteRenderer> ().bounds.extents.x;
@@ -28,8 +26,14 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 		if (player1.transform.position.x > player2.transform.position.x) {
 			first = player1;
+			if (player2.transform.position.x < (transform.position.x - (Camera.main.orthographicSize * Camera.main.aspect))){
+				player2.damage(false);
+			}
 		} else {
 			first = player2;
+			if (player1.transform.position.x < (transform.position.x - (Camera.main.orthographicSize * Camera.main.aspect))){
+				player1.damage(false);
+			}
 		}
 
 		//Camera follow
