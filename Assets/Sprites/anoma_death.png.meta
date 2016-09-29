@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 92661936f8228fa40954a6eb7e7b9ae9
-timeCreated: 1474064248
+guid: e20470a926701a3488929a0b510a4550
+timeCreated: 1475124905
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: healthSprite_0
-    21300002: healthSprite_1
-    21300004: healthSprite_2
-    21300006: healthSprite_3
+    21300000: anoma_death_0
+    21300002: anoma_death_1
+    21300004: anoma_death_2
+    21300006: anoma_death_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,43 +53,43 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: healthSprite_0
+    - name: anoma_death_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 7
-        width: 95
-        height: 25
+        x: 0
+        y: 616
+        width: 382
+        height: 200
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: healthSprite_1
+    - name: anoma_death_1
       rect:
         serializedVersion: 2
-        x: 111
-        y: 7
-        width: 95
-        height: 25
+        x: 0
+        y: 411
+        width: 382
+        height: 200
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: healthSprite_2
+    - name: anoma_death_2
       rect:
         serializedVersion: 2
-        x: 214
-        y: 7
-        width: 95
-        height: 25
+        x: 0
+        y: 206
+        width: 382
+        height: 200
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: healthSprite_3
+    - name: anoma_death_3
       rect:
         serializedVersion: 2
-        x: 317
-        y: 7
-        width: 95
-        height: 25
+        x: 0
+        y: 1
+        width: 382
+        height: 200
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

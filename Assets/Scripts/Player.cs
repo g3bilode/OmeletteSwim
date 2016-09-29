@@ -14,8 +14,8 @@ public class Player : MonoBehaviour {
 	public int health;
 
 	GameController gameController;
-	GameObject healthBar;
-	Animator anim;
+	public GameObject healthBar;
+	Animator healthBarAnim;
 	bool facingRight = true;
 	float damageTimer = 0.0f;
 	float boostTimer = 0.0f;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour {
 		healthBar = Instantiate(healthBarPrefab,
 		            healthPos,
 		            Quaternion.identity) as GameObject;
-		anim = healthBar.GetComponent<Animator> ();
+		healthBarAnim = healthBar.GetComponent<Animator> ();
 	}
 
 	//(FixedUpdate doesn't require time.deltaTimeWhatever)
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour {
 			//Change sprite rotation to match direction
 			Vector2 moveDirection = GetComponent<Rigidbody2D> ().velocity;
 			if (moveDirection.magnitude != 0) {
+				GetComponent<Animator>().SetBool("Moving", true);
 				float angle = Mathf.Atan2 (moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
 				transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.AngleAxis (angle, Vector3.forward), 0.2f);
 				if (Input.GetAxis (horzAxe) < 0 && facingRight) {
@@ -49,6 +50,8 @@ public class Player : MonoBehaviour {
 				} else if (Input.GetAxis (horzAxe) > 0 && !facingRight) {
 					flipSprite ();
 				}
+			} else {
+				GetComponent<Animator>().SetBool("Moving", false);
 			}
 
 			//damaged
@@ -87,10 +90,11 @@ public class Player : MonoBehaviour {
 	//Damage player
 	public void damage(bool giveBoost){
 		if (damageTimer <= 0.0f){ //not recently damaged
-			anim.SetInteger ("Health", health - 1);
+			healthBarAnim.SetInteger ("Health", health - 1);
 			health -= 1;
 			if (health <= 0) {
 				gameController.victory (opponent);
+				GetComponent<Animator>().SetBool("Dead", true);
 			} else {
 				damageTimer = 2.5f;
 				if (giveBoost){
@@ -103,11 +107,18 @@ public class Player : MonoBehaviour {
 
 	public void boost(){
 		if (health < 3) {
-			anim.SetInteger ("Health", health + 1);
+			healthBarAnim.SetInteger ("Health", health + 1);
 			health +=1;
 		}
 		speed = boostSpeed;
 		boostTimer = 2.5f;
+	}
+
+	public void kill(){
+		healthBar.GetComponent<SpriteRenderer> ().enabled = false;
+		GetComponent<SpriteRenderer> ().enabled = false;
+		GetComponent<CircleCollider2D> ().enabled = false;
+		GetComponent<BoxCollider2D> ().enabled = false;
 	}
 
 	//Blink sprite

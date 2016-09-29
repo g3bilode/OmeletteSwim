@@ -18,8 +18,10 @@ public class GameController : MonoBehaviour {
 	public void victory(Player winner){
 		if (winner == player1) {
 			victoryText.text = "PLAYER ONE\nSURVIVES";
+			StartCoroutine(crushLoser(player2));
 		} else {
 			victoryText.text = "PLAYER TWO\nSURVIVES";
+			StartCoroutine(crushLoser(player1));
 		}
 		finished = true;
 		victoryText.gameObject.SetActive (true);
@@ -28,6 +30,12 @@ public class GameController : MonoBehaviour {
 
 		transform.FindChild("Music").GetComponent<AudioSource>().Stop();
 		transform.FindChild("VictorySound").GetComponent<AudioSource>().Play();
+	}
+
+	IEnumerator crushLoser(Player loser){
+		loser.healthBar.GetComponent<SpriteRenderer> ().enabled = false;
+		yield return new WaitForSeconds(7.0f);
+		loser.GetComponent<Animator>().SetBool("Dead", true);
 	}
 
 }

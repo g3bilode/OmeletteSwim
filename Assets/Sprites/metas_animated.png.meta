@@ -1,9 +1,12 @@
 fileFormatVersion: 2
-guid: 2982193042f043b4d8ced2b3f5936cb2
-timeCreated: 1474231636
+guid: 3fcd47b80a385b547ae59bb4b082d309
+timeCreated: 1475115859
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: fish_metas_animated_0
+    21300002: fish_metas_animated_1
+    21300004: fish_metas_animated_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,14 +33,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +51,37 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: fish_metas_animated_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 298
+        width: 337
+        height: 99
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fish_metas_animated_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 154
+        width: 337
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fish_metas_animated_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 337
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

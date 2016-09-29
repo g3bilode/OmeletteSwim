@@ -11879,7 +11879,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198399615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -203.899994, y: 0, z: 0}
+  m_LocalPosition: {x: -200, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1621493185}
@@ -15729,6 +15729,7 @@ GameObject:
   - 114: {fileID: 1621493183}
   - 58: {fileID: 1621493186}
   - 61: {fileID: 1621493181}
+  - 95: {fileID: 1621493187}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -15776,7 +15777,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9be1bd19ff0f4ea4d9b611c5b0f71dc0, type: 3}
-  m_Name: Char
+  m_Name: Player1
   m_EditorClassIdentifier: 
   horzAxe: Horizontal1
   vertAxe: Vertical1
@@ -15785,6 +15786,7 @@ MonoBehaviour:
   minSpeed: 10
   boostSpeed: 15
   health: 3
+  healthBar: {fileID: 0}
 --- !u!212 &1621493184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15837,6 +15839,23 @@ CircleCollider2D:
   m_Offset: {x: 1, y: -.200000003}
   serializedVersion: 2
   m_Radius: .550000012
+--- !u!95 &1621493187
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621493180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f4b7718fa207c54985f6f14439b1f0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1635562267
 GameObject:
   m_ObjectHideFlags: 0
@@ -16740,6 +16759,7 @@ GameObject:
   - 58: {fileID: 1695051817}
   - 61: {fileID: 1695051813}
   - 114: {fileID: 1695051812}
+  - 95: {fileID: 1695051818}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -16765,6 +16785,7 @@ MonoBehaviour:
   minSpeed: 10
   boostSpeed: 15
   health: 3
+  healthBar: {fileID: 0}
 --- !u!61 &1695051813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16820,7 +16841,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1357739789
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9cc4e0aaf3ba9ba47af94837da0e0fde, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fcd47b80a385b547ae59bb4b082d309, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1695051816
 Transform:
@@ -16847,6 +16868,23 @@ CircleCollider2D:
   m_Offset: {x: 1, y: 0}
   serializedVersion: 2
   m_Radius: .550000012
+--- !u!95 &1695051818
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695051811}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90f86c14bbf0a3246bbb85773af420bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1699121841
 GameObject:
   m_ObjectHideFlags: 0
@@ -19602,7 +19640,7 @@ Prefab:
     - target: {fileID: 21267256, guid: 526748656741c1744b7420d129294d73, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9cc4e0aaf3ba9ba47af94837da0e0fde,
+      objectReference: {fileID: 21300000, guid: 3fcd47b80a385b547ae59bb4b082d309,
         type: 3}
     - target: {fileID: 11411850, guid: 526748656741c1744b7420d129294d73, type: 2}
       propertyPath: speed
