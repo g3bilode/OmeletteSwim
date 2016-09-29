@@ -89,18 +89,21 @@ public class Player : MonoBehaviour {
 
 	//Damage player
 	public void damage(bool giveBoost){
-		if (damageTimer <= 0.0f){ //not recently damaged
-			healthBarAnim.SetInteger ("Health", health - 1);
-			health -= 1;
-			if (health <= 0) {
-				gameController.victory (opponent);
-				GetComponent<Animator>().SetBool("Dead", true);
-			} else {
-				damageTimer = 2.5f;
-				if (giveBoost){
-					speed = boostSpeed;
+		if (health > 0) {
+			if (damageTimer <= 0.0f) { //not recently damaged
+				GetComponent<AudioSource> ().Play ();
+				healthBarAnim.SetInteger ("Health", health - 1);
+				health -= 1;
+				if (health <= 0) {
+					gameController.victory (opponent);
+					GetComponent<Animator> ().SetBool ("Dead", true);
+				} else {
+					damageTimer = 2.5f;
+					if (giveBoost) {
+						speed = boostSpeed;
+					}
+					StartCoroutine (blink (damageTimer));
 				}
-				StartCoroutine(blink(damageTimer));
 			}
 		}
 	}

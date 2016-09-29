@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 441640}
   - 212: {fileID: 21277680}
   - 61: {fileID: 6158452}
-  - 114: {fileID: 11479242}
   - 82: {fileID: 8259530}
+  - 114: {fileID: 11401566}
   m_Layer: 0
   m_Name: SpikyWorm
   m_TagString: Untagged
@@ -25,9 +25,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126760}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 184.449997, y: 2.96000004, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: .297252148, w: .954799056}
+  m_LocalPosition: {x: 16.3700008, y: 1.89999998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,9 +53,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7fecf07a356153c41bf0d2cdcfc98948, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 745d0cc9ab059e84eaca99a7f59f04f6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .100000001
+  m_Volume: .400000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -113,7 +113,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11479242
+--- !u!114 &11401566
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 126760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82715d55d7f7dca41a9ffc80e14b4b13, type: 3}
+  m_Script: {fileID: 11500000, guid: 332f6ee48701a6147b1a1ed9a238cdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21277680
@@ -148,7 +148,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1357739789
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ac7a087c4e15fd24c876147155827bd3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e02506fd77c6b644a5913fb9370d2a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
