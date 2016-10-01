@@ -8,11 +8,28 @@ public class GameController : MonoBehaviour {
 	public Player player2;
 	public Text victoryText;
 	public GameObject restartButton;
+	public GameObject exitButton;
 	public bool finished = false;
+	public bool isPause = false;
 
 	void Start(){
 		transform.FindChild("Music").GetComponent<AudioSource>().time = 57.0f;
 		transform.FindChild("Music").GetComponent<AudioSource>().Play();
+	}
+
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			isPause = !isPause;
+			if(isPause){
+				Time.timeScale = 0;
+				restartButton.SetActive(true);
+				exitButton.SetActive(true);
+			} else {
+				Time.timeScale = 1;
+				restartButton.SetActive(false);
+				exitButton.SetActive(false);
+			}
+		}
 	}
 
 	public void victory(Player winner){
