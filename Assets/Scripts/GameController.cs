@@ -9,11 +9,11 @@ public class GameController : MonoBehaviour {
 	public Text victoryText;
 	public GameObject restartButton;
 	public GameObject exitButton;
+	public GameObject mainButton;
 	public bool finished = false;
 	public bool isPause = false;
 
 	void Start(){
-		transform.FindChild("Music").GetComponent<AudioSource>().time = 57.0f;
 		transform.FindChild("Music").GetComponent<AudioSource>().Play();
 	}
 
@@ -24,10 +24,12 @@ public class GameController : MonoBehaviour {
 				Time.timeScale = 0;
 				restartButton.SetActive(true);
 				exitButton.SetActive(true);
+				mainButton.SetActive(true);
 			} else {
 				Time.timeScale = 1;
 				restartButton.SetActive(false);
 				exitButton.SetActive(false);
+				mainButton.SetActive(false);
 			}
 		}
 	}

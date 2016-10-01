@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ControlsButton.cs" />
      <Compile Include="Assets\ExitButton.cs" />
+     <Compile Include="Assets\MainButton.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\FinishLine.cs" />
      <Compile Include="Assets\Scripts\Food.cs" />
@@ -56,6 +58,7 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\SpikyWorm.cs" />
+     <Compile Include="Assets\StartGameController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Users/Philip/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

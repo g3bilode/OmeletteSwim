@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FinishLine : MonoBehaviour {
 
-	public GameObject rockPrefab;
+	public GameObject[] rockPrefabs;
 	bool ended = false;
 
 	void OnTriggerEnter2D (Collider2D other){
@@ -18,20 +18,24 @@ public class FinishLine : MonoBehaviour {
 	}
 
 	IEnumerator rockSpawn(float duration){
+		this.GetComponent<AudioSource>().Play();
 		float endTime = Time.time + duration;
 		while (Time.time < endTime){
+			if(Random.value > 0.5){
+				this.GetComponent<AudioSource>().Play();
+			}
 			Vector3 rockPos = new Vector3 (transform.position.x - Random.Range(0,10),
 			                               transform.position.y + 10,
 			                               0);
-			GameObject rock = Instantiate (rockPrefab, rockPos, Quaternion.identity) as GameObject;
+			GameObject rock = Instantiate (rockPrefabs[Random.Range(0,2)], rockPos, Quaternion.identity) as GameObject;
 			StartCoroutine (rockCollide (rock));
 
 			rockPos = new Vector3 (transform.position.x - (12+Random.Range(0,10)),
 			                               transform.position.y + 10,
 			                               0);
-			rock = Instantiate (rockPrefab, rockPos, Quaternion.identity) as GameObject;
+			rock = Instantiate (rockPrefabs[Random.Range(0,2)], rockPos, Quaternion.identity) as GameObject;
 			StartCoroutine (rockCollide (rock));
-			yield return new WaitForSeconds (0.3f);
+			yield return new WaitForSeconds (0.35f);
 		}
 	}
 
